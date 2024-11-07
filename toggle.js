@@ -1,16 +1,11 @@
+//Toggle knapp för att byta tema
+
 const toggleSwitch = document.getElementById("toggleSwitch");
-let imgCold = document.getElementById("imgCold")
-let imgWarm = document.getElementById("imgWarm")
 let background = document.body;
 
-
 toggleSwitch.addEventListener("click", () => {
-    imgCold.classList.toggle("hide");
-    imgWarm.classList.toggle("show");
 
     background.classList.toggle("tropic");
-
-
 
 });
 
@@ -26,8 +21,8 @@ function saveToggleState() {
 toggleSwitch.addEventListener("click", () => {
     const isTropic = toggleSwitch.checked;
     localStorage.setItem("isTropic", isTropic); // Sparar status i LocalStorage
-    background.classList.toggle("tropic", isTropic); // Växlar klass på rubrik beroende på tillstånd
+    background.classList.toggle("tropic", isTropic); // Växlar klass på bakgrund beroende på tillstånd
 });
 
-// Anropar initialiseringsfunktionen när sidan laddas
+// Anropar funktionen när sidan laddas
 saveToggleState();
