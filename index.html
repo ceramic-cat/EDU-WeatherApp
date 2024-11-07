@@ -3,9 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="design.css">
     <title>Weather-app</title>
 </head>
 <body>
+    <header>
     
+        <label class="switch">
+            <input type="checkbox" id="toggleSwitch">
+            <span class="slider"></span>
+        </label>
+    </header>
+    <main>
+        <div class="container">
+        
+            <section class="cityA">
+                    <label for="chooseCity"></label>
+                <select name="chooseCity" id="chooseCity">
+                    <option value="" disabled selected>Choose a city</option>
+                    <option value="boras">Borås</option>
+                    <option value="norrkoping">Norrköping</option>
+                    <option value="dodoma">Dodoma</option>
+                    <option value="zanzibar">Zanzibar</option>
+                </select>
+                <div class="infoCityA">
+                <img src="weatherIconA" alt="Weather Icon">
+                <div id="tempDivA"></div>
+                <div id="weatherInfoA"></div>
+                <div id="hourlyForcastA"></div>
+            </div>
+                </section>
+
+                <section class="cityB">
+                    <label for="chooseCity"></label>
+                <select name="chooseCity" id="chooseCity">
+                    <option value="" disabled selected>Choose a city</option>
+                    <option value="boras">Borås</option>
+                    <option value="norrkoping">Norrköping</option>
+                    <option value="dodoma">Dodoma</option>
+                    <option value="zanzibar">Zanzibar</option>
+                </select>
+                <div class="infoCityA">
+                <img src="weatherIconB" alt="Weather Icon">
+                <div id="tempDivB"></div>
+                <div id="weatherInfoB"></div>
+                <div id="hourlyForcastB"></div>
+            </section>
+        </div>
+
+         </div>
+    </main>
+    <footer></footer>
 </body>
 </html>
