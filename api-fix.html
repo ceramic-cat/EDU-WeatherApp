@@ -5,14 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Väder app</title>
     <script src="api.js"></script>
-
+    <script type="text/javascript">getWeather("Swaziland");</script>
+    <style>
+      #print-out
+      {
+        text-transform: capitalize;
+      }
+      html
+      {
+        background-color: steelblue;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
-      <section class="bg-main border">
+      <section>
         <div id="weather-info">No errors yet!</div>
         <div id="print-out">Holder text</div>
-
       </section>
     </div>
 
