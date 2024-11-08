@@ -19,14 +19,15 @@
          
             <section class="cityA">
                     <label for="chooseCity"></label>
-                <select name="chooseCity" id="chooseCity">
+                <select name="chooseCityA" id="city-dropdown-a">
                     <option value="" disabled selected>Choose a city</option>
                     <option value="boras">Borås</option>
                     <option value="norrkoping">Norrköping</option>
                     <option value="dodoma">Dodoma</option>
                     <option value="zanzibar">Zanzibar</option>
                 </select>
-            
+
+                <div id="city-display-a"></div>
                 <img src="weatherIconA" alt="Weather Icon">
                 <div id="tempDivA"></div>
                 <div id="weatherInfoA"></div>
@@ -36,24 +37,25 @@
                 
              <section class="cityB">
                     <label for="chooseCity"></label>
-                    <select name="chooseCity" id="chooseCity">
+                    <select name="chooseCityB" id="city-dropdown-b">
                     <option value="" disabled selected>Choose a city</option>
                     <option value="boras">Borås</option>
                     <option value="norrkoping">Norrköping</option>
                     <option value="dodoma">Dodoma</option>
                     <option value="zanzibar">Zanzibar</option>
                     </select>
-            
+                    
+                <div id="city-display-b"></div>
                 <img src="weatherIconB" alt="Weather Icon">
                 <div id="tempDivB"></div>
                 <div id="weatherInfoB"></div>
                 <div id="hourlyForcastB"></div>
-           
             </section>
         
         </div>
     </main>
     <footer></footer>
     <script src="toggle.js"></script>
+    <script src="dropdown.js"></script>
 </body>
 </html>
