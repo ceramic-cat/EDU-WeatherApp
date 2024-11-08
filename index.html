@@ -29,18 +29,17 @@
                     <option value="dodoma">Dodoma</option>
                     <option value="zanzibar">Zanzibar</option>
                 </select>
-            </section>
-            <div id="weatherContainerA" class="weather-container">
-                <h2>Stad A</h2>
-                <div data-weather="description"></div>
-                <div data-weather="temperature"></div>
-                <div data-weather="feels_like"></div>
-                <div data-weather="humidity"></div>
-                <div data-weather="pressure"></div>
-                <div data-weather="wind"></div>
-                <img data-weather="icon" alt="Weather icon">
-            </div>
-            
+                <div id="weatherContainerA" class="weather-container">
+                    <h2 data-weather="city"></h2>
+                    <div data-weather="description"></div>
+                    <div data-weather="temperature"></div>
+                    <div data-weather="feels_like"></div>
+                    <div data-weather="humidity"></div>
+                    <div data-weather="pressure"></div>
+                    <div data-weather="wind"></div>
+                    <img data-weather="icon" alt="Weather icon">
+                </div>
+            </section>         
           <section class="cityB">
                     <label for="chooseCity"></label>
                     <select class="btn bg-success-subtle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" name="chooseCityB" id="city-dropdown-b" onchange="fetchWeatherData('city-dropdown-b', 'weatherContainerB')">
@@ -50,19 +49,18 @@
                     <option value="dodoma">Dodoma</option>
                     <option value="zanzibar">Zanzibar</option>
                     </select>
+                    <div id="weatherContainerB" class="weather-container">
+                        <h2 data-weather="city"></h2>
+                        <div data-weather="description"></div>
+                        <div data-weather="temperature"></div>
+                        <div data-weather="feels_like"></div>
+                        <div data-weather="humidity"></div>
+                        <div data-weather="pressure"></div>
+                        <div data-weather="wind"></div>
+                        <img data-weather="icon" alt="Weather icon">
+                    </div>
+                
             </section>
-
-            <div id="weatherContainerB" class="weather-container">
-                <h2>Stad B</h2>
-                <div data-weather="description"></div>
-                <div data-weather="temperature"></div>
-                <div data-weather="feels_like"></div>
-                <div data-weather="humidity"></div>
-                <div data-weather="pressure"></div>
-                <div data-weather="wind"></div>
-                <img data-weather="icon" alt="Weather icon">
-            </div>
-        
         </div>
     </main>
     <footer></footer>

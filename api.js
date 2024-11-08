@@ -11,6 +11,7 @@ function fetchWeatherData(selectId, containerId) {
       // Process and display the weather data
       console.log(data);  // For debugging
       const weatherData = {
+        city: data.name,
         description: data.weather[0].description,
                 temperature: `${data.main.temp}°C`,
                 feels_like: `${data.main.feels_like}°C`,
