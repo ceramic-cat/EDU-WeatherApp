@@ -1,13 +1,17 @@
 body {
     background-color: #8EC5E7;
+    background-image: url(../img/5096259.jpg);
+    background-size: 40%;
+    background-repeat: repeat;
+
 
 
 }
 
 body.tropic {
     background-color: #8F2F28;
-    background-image: url(/img/africa.pattern.jpg);
-    background-size: 90%;
+    background-image: url(../img/africa.pattern.jpg);
+    background-size: 80%;
 
 }
 
