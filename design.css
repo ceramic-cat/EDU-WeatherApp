@@ -92,7 +92,15 @@ section {
     background-color: bisque;
 }
 
-.infoCityA,
-.infoCityB {
-    dis
+/* Cat facts*/
+#cat-fact-container {
+    transform: translateY(-100%);  /* Start off-screen */
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.5s ease, opacity 0.5s ease, visibility 0.5s;
+}
+#cat-fact-container.show {
+    transform: translateY(0);  /* Slide into view */
+    opacity: 1;
+    visibility: visible;
 }
