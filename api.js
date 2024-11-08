@@ -1,6 +1,6 @@
 const apiKey = "be79937bd89750df6fe78cbc16cdd92d";
 
-function getWeather(city, displayWeatherData) {  // displayId = id of the element who shows the weather data
+function getWeather(city, weatherElementId) {  // displayId = id of the element who shows the weather data
   const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
   fetch(apiUrl)
@@ -18,7 +18,7 @@ function getWeather(city, displayWeatherData) {  // displayId = id of the elemen
       const iconUrl = `https://openweathermap.org/img/wn/${icon_id}@2x.png`
 
       console.log(icon_id);
-      document.getElementById(displayWeatherData).innerHTML = `  
+      document.getElementById(weatherElementId).innerHTML = `  
         ${city} <br>
         Weather: ${weatherDescription}<br>
         <img src="${iconUrl}" alt="Weather icon" > <br>
@@ -31,7 +31,7 @@ function getWeather(city, displayWeatherData) {  // displayId = id of the elemen
     })
     .catch((error) => {
       console.error("Error fetching weather data: ", error);
-      document.getElementById(displayWeatherData).innerHTML = "Error fetching data!";
+      document.getElementById(weatherElementId).innerHTML = "Error fetching data!";
     });
 }
 
