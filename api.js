@@ -38,3 +38,7 @@ function getWeather(city, weatherElementId) {  // displayId = id of the element 
 document.getElementById("city-dropdown-a").addEventListener("change", function () {
   getWeather(this.value, "city-display-a");
 });
+
+document.getElementById("city-dropdown-b").addEventListener("change", function () {
+  getWeather(this.value, "city-display-b");
+});
