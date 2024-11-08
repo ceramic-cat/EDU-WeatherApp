@@ -103,4 +103,6 @@ section {
     transform: translateY(0);  /* Slide into view */
     opacity: 1;
     visibility: visible;
+
+    
 }
