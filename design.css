@@ -89,17 +89,14 @@ section {
     flex-direction: column;
     margin: 40px;
     padding: 30px;
-    background-color: red;
 }
 
 .cityA {
-    background-color: #5E4955;
     background-color: #eee;
     border-radius: 10%;
 }
 
 .cityB {
-    background-color: #8B80F9;
     background-color: #eee;
     border-radius: 10%;
 }
