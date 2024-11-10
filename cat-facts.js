@@ -1,37 +1,45 @@
 function getCatFact() {
-    const catApiUrl = "https://cat-fact.herokuapp.com/facts";
-    return fetch(catApiUrl)
-      .then((data) => data.json())
-      .then((data) => {
-        let fact = data[0].text;
-        console.log("Fetched cat fact:", fact);
-        return fact;
-      });
-  }
+  const catApiUrl = "https://cat-fact.herokuapp.com/facts";
+  return fetch(catApiUrl)
+    .then((data) => data.json())
+    .then((data) => {
+      let fact = data[0].text;
+      console.log("Fetched cat fact:", fact);
+      return fact;
+    })
+    .catch((error) => 
+    {
+      console.error("Error catching cat facts: ", error);
+      return "Sorry, I could not catch a cat fact at this time";
+    })
+    
+    ;
+}
 
 // Show the catfact
 function showCatFact() {
-    const notification = document.getElementById("cat-fact-container");
-    const paragraph = document.getElementById("cat-fact-paragraph");
-  
-    // Call getCatFact and update paragraph after the fact is fetched
-    getCatFact().then((catFact) => {
-      paragraph.innerText = catFact;
-      notification.classList.add("show");
-      console.log("Showing cat fact:", catFact);
-    });
+  const notification = document.getElementById("cat-fact-container");
+  const paragraph = document.getElementById("cat-fact-paragraph");
 
-      // Hide catfact after certain time
-  setTimeout(() => {
-    notification.classList.remove("show");
-}, 5000);
-  }
-
-
+  // Call getCatFact and update paragraph after the fact is fetched
+  getCatFact()
+  .then((catFact) => {
+    paragraph.innerText = catFact;
+    notification.classList.add("show");
+    console.log("Showing cat fact:", catFact);
+  })
+  .then(
+        // Hide catfact after set number of ms
+        setTimeout(() => {
+          notification.classList.remove("show");
+        }, 5000)
+  )
+  ;
+}
 
 // Checking if it is raining and if it is, fetch a catfact and show it
 function checkRaining() {
-  let city = "Narvik";
+  let city = "Cincinnati";
   const apiKey = "be79937bd89750df6fe78cbc16cdd92d";
   const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
@@ -41,7 +49,7 @@ function checkRaining() {
       // Process and display the weather data
       console.log(data); // For debugging
       const weatherCode = data.weather[0].id;
-      if ((weatherCode >= 200) & (weatherCode < 600)) {
+      if ((weatherCode >= 200) && (weatherCode < 600)) {
         showCatFact();
         console.log("Showing catfact!");
       }
