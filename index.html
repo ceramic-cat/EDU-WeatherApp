@@ -29,42 +29,46 @@
       </label>
     </header>
     <main>
-      <div class="container">
-        <section class="cityA">
-          <label for="chooseCity"></label>
-          <select name="chooseCityA" id="city-dropdown-a">
-            <option value="" disabled selected>Choose a city</option>
-            <option value="boras">Borås</option>
-            <option value="norrkoping">Norrköping</option>
-            <option value="dodoma">Dodoma</option>
-            <option value="zanzibar">Zanzibar</option>
-          </select>
+        <div class="container">
+         
+            <section class="cityA" id="cityA">
+                    <label for="city-dropdown-a"></label>
+                <select class="btn bg-success-subtle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+                      name="chooseCityA" id="city-dropdown-a">
+                    <option value="" disabled selected>Choose a city</option>
+                    <option value="boras">Borås</option>
+                    <option value="norrkoping">Norrköping</option>
+                    <option value="dodoma">Dodoma</option>
+                    <option value="zanzibar">Zanzibar</option>
+                </select>
 
-          <div id="city-display-a"></div>
-          <img src="weatherIconA" alt="Weather Icon" />
-          <div id="tempDivA"></div>
-          <div id="weatherInfoA"></div>
-          <div id="hourlyForcastA"></div>
-        </section>
-
-        <section class="cityB">
-          <label for="chooseCity"></label>
-          <select name="chooseCityB" id="city-dropdown-b">
-            <option value="" disabled selected>Choose a city</option>
-            <option value="boras">Borås</option>
-            <option value="norrkoping">Norrköping</option>
-            <option value="dodoma">Dodoma</option>
-            <option value="zanzibar">Zanzibar</option>
-          </select>
-
-          <div id="city-display-b"></div>
-          <img src="weatherIconB" alt="Weather Icon" />
-          <div id="tempDivB"></div>
-          <div id="weatherInfoB"></div>
-          <div id="hourlyForcastB"></div>
-        </section>
-      </div>
-
+                <div id="city-display-a"></div>
+                <img src="weatherIconA" alt="Weather Icon">
+                <div id="tempDivA"></div>
+                <div id="weatherInfoA"></div>
+                <div id="hourlyForcastA"></div>
+            </section>
+            
+                
+             <section class="cityB">
+                    <label for="city-dropdown-b"></label>
+                    <select class="btn bg-success-subtle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" name="chooseCityB" id="city-dropdown-b">
+                    <option value="" disabled selected>Choose a city</option>
+                    <option value="boras">Borås</option>
+                    <option value="norrkoping">Norrköping</option>
+                    <option value="dodoma">Dodoma</option>
+                    <option value="zanzibar">Zanzibar</option>
+                    </select>
+                    
+                <div id="city-display-b"></div>
+                <img src="weatherIconB" alt="Weather Icon">
+                <div id="tempDivB"></div>
+                <div id="weatherInfoB"></div>
+                <div id="hourlyForcastB"></div>
+            </section>
+        
+        </div>
+  
       <div
         id="cat-fact-container"
         class="alert alert-primary position-fixed end-0 top-0 shadow-lg col-md-2 col-md-offset"
