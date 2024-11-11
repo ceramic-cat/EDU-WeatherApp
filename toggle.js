@@ -1,28 +1,28 @@
-//Toggle knapp för att byta tema
+//Toggle knapp för att byta tema 
+
 
 const toggleSwitch = document.getElementById("toggleSwitch");
-let background = document.body;
+let body = document.body;
 
-toggleSwitch.addEventListener("click", () => {
 
-    background.classList.toggle("tropic");
-
-});
-
-// Funktion för att spara val av tema
-
-function saveToggleState() {
+// Funktion för att ändra backgrund och spara 
+function themeToggle() {
+    const isTropic = toggleSwitch.checked;
+    localStorage.setItem("isTropic", isTropic);
+    body.classList.toggle("tropic", isTropic);
+}
+//Hämtade sparade temat
+function savedTheme() {
     const isTropic = localStorage.getItem("isTropic") === "true";
-    toggleSwitch.checked = isTropic; // Ställer in switchen efter sparat värde
-    background.classList.toggle("tropic", isTropic); // Sätter bodyns bakgrund om sparat värde är "på"
+    toggleSwitch.checked = isTropic;
+    body.classList.toggle("tropic", isTropic);
 }
 
-// Anropas varje gång switchen togglas
-toggleSwitch.addEventListener("click", () => {
-    const isTropic = toggleSwitch.checked;
-    localStorage.setItem("isTropic", isTropic); // Sparar status i LocalStorage
-    background.classList.toggle("tropic", isTropic); // Växlar klass på bakgrund beroende på tillstånd
-});
+// Event lyssnare för att växla backgrund när man klickar
+toggleSwitch.addEventListener("click", themeToggle);
 
-// Anropar funktionen när sidan laddas
-saveToggleState();
+//Anropa
+savedTheme();
+
+
+

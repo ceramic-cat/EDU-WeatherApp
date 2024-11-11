@@ -1,101 +1,113 @@
 body {
     background-color: #8EC5E7;
-    background-image: url(../img/5096259.jpg);
+    background-image: url(img/5096259.jpg);
     background-size: 40%;
     background-repeat: repeat;
-
-
 
 }
 
 body.tropic {
     background-color: #8F2F28;
-    background-image: url(../img/africa.pattern.jpg);
+    background-image: url(img/africa.pattern.jpg);
     background-size: 80%;
+
 
 }
 
 header {
-    display: flex;
-    justify-content: end;
+  display: flex;
+  justify-content: end;
 }
 
 /*Toggleknapp*/
 
 .switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
 }
 
 /*Ta bort checkbox rutan*/
 .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+  opacity: 0;
+  width: 0;
+  height: 0;
 
 }
 
 /*Bakgrunden till switch-knappen*/
 .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: 0.4s;
-    border-radius: 34px;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
 }
 
 /* Cirkeln som rör sig till höger/vänster när man klickar på knappen*/
 .slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    transition: 0.4s;
-    border-radius: 50%;
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
 }
 
 /*ändrar färgen när checkboxen är aktiverad*/
 input:checked+.slider {
     background-color: #5E4955;
-    /* Grön färg för "på" */
+  /* Grön färg för "på" */
 }
 
 input:checked+.slider:before {
-    transform: translateX(26px);
-    /* Flyttar cirkeln till höger */
+  transform: translateX(26px);
+  /* Flyttar cirkeln till höger */
 }
 
 .container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 section {
-    height: 100vh;
-    width: 400px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    margin: 40px;
-    padding: 30px;
+  height: 100vh;
+  width: 400px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  margin: 40px;
+  padding: 30px;
 }
 
 .cityA {
-    background-color: #eee;
-    border-radius: 10%;
+  background-color: #eee;
+  border-radius: 10%;
 }
 
 .cityB {
-    background-color: #eee;
-    border-radius: 10%;
+  background-color: #eee;
+  border-radius: 10%;
+}
+
+/* Cat facts*/
+#cat-fact-container {
+  transform: translateY(-100%); /* Start off-screen */
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.5s ease, opacity 0.5s ease, visibility 0.5s;
+}
+#cat-fact-container.show {
+  transform: translateY(0); /* Slide into view */
+  opacity: 1;
+  visibility: visible;
 }
