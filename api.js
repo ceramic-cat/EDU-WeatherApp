@@ -28,6 +28,8 @@ function fetchWeatherData(selectId, containerId) {
                 icon: `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`,
             };
 
+            localStorage.setItem(selectId, city);
+
             // Lägg till väderinformationen (se längre ner i koden för funktionen)
             updateWeatherDisplay(containerId, weatherData);
         })
@@ -51,3 +53,22 @@ function updateWeatherDisplay(containerId, weatherData) {
         }
     });
 }
+
+
+function saveCity() {
+    const savedCityA = localStorage.getItem('city-dropdown-a');
+    const savedCityB = localStorage.getItem('city-dropdown-b');
+
+
+    if (savedCityA) {
+        document.getElementById('city-dropdown-a').value = savedCityA;
+        fetchWeatherData('city-dropdown-a', 'weatherContainerA');
+    }
+
+    if (savedCityB) {
+        document.getElementById('city-dropdown-b').value = savedCityB;
+        fetchWeatherData('city-dropdown-b', 'weatherContainerB');
+    }
+}
+saveCity();
+
