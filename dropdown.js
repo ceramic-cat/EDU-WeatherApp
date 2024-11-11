@@ -1,3 +1,5 @@
+const apiKey = "be79937bd89750df6fe78cbc16cdd92d";
+
 // Stad (objekt) som innehåller väderdata (nyckel)
 // Här ska api:et läggas till för att hämta väderdata
 const weatherData = {

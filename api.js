@@ -1,46 +1,53 @@
-
 const apiKey = "be79937bd89750df6fe78cbc16cdd92d";
 
-function getWeather(city) {
-  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+// selectId = ta emot val i dropdown menyerna
+// containerId = elementet där väderinformationen ska visas
+function fetchWeatherData(selectId, containerId) {
+    const city = document.getElementById(selectId).value;
+    if (!city) return; // Är ingen stad vald, händer inget och funktionen avslutas
 
+    // apiUrl = anropar apiet för att hämta väderdata för vald stad
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
-  fetch(apiUrl)
-    .then((response) => response.json())  
-    .then((data) => {
-      // Process and display the weather data
-      console.log(data);  // For debugging
-      const weatherDescription = data.weather[0].description;
-      const temp = data.main.temp;
-      const feels_like = data.main.feels_like;
-      const humidity = data.main.humidity;
-      const pressure = data.main.pressure;
-      const wind = data.wind.speed;
-      const icon_id = data.weather[0].icon;
-      const iconUrl = `https://openweathermap.org/img/wn/${icon_id}@2x.png`
+    // Begär väderdata från OpenWeatherMap API
+    fetch(apiUrl)
+        .then((response) => response.json()) // Svaret från apiet knventeras till json
 
-      console.log(icon_id);
-      document.getElementById("print-out").innerHTML = `
-        ${city} <br>
+        .then((data) => {
+            // När datan är konverterad till json får vi väderinformationen
 
-        
+            console.log(data); // For debugging
+            const weatherData = {
+                city: data.name,
+                description: data.weather[0].description,
+                temperature: `${data.main.temp}°C`,
+                feels_like: `${data.main.feels_like}°C`,
+                humidity: `${data.main.humidity}%`,
+                pressure: `${data.main.pressure} kPa`,
+                wind: `${data.wind.speed} m/s`,
+                icon: `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`,
+            };
 
-        Weather: ${weatherDescription}<br>
-        <img src="${iconUrl}" alt="Weather icon" > <br>
-
-
-        Temperature: ${temp}°C<br>
-        Feels like: ${feels_like}°C<br>
-        Humidity: ${humidity}% <br>
-        Air pressure: ${pressure} kPa<br>
-        Wind: ${wind} m/s<br>
-      `;
-    })
-    .catch((error) => {
-      console.error("Error fetching weather data: ", error);
-      document.getElementById("weather-info").innerHTML = "Error fetching data!";
-    });
+            // Lägg till väderinformationen (se längre ner i koden för funktionen)
+            updateWeatherDisplay(containerId, weatherData);
+        })
+        .catch((error) => {
+            console.error("Error fetching weather data: ", error);
+            alert("Error fetching data for " + city);
+        });
 }
 
+function updateWeatherDisplay(containerId, weatherData) {
+    const container = document.getElementById(containerId);
 
-
+    Object.keys(weatherData).forEach((key) => {
+        const element = container.querySelector(`[data-weather="${key}"]`);
+        if (key === "icon" && element) {
+            // Är det en bild som ska visas sätts src-attributet till urln för bilden
+            element.src = weatherData[key];
+        } else if (element) {
+            // Elemnen som inte är bilder får texten satt till värdet (te.x temperatur)
+            element.textContent = weatherData[key];
+        }
+    });
+}
