@@ -1,9 +1,18 @@
 body {
-  background-color: rgb(77, 77, 169);
+  background-color: #8EC5E7;
+  background-image: url(../img/5096259.jpg);
+  background-size: 40%;
+  background-repeat: repeat;
+
+
+
 }
 
 body.tropic {
-  background-color: rgb(228, 134, 61);
+  background-color: #8F2F28;
+  background-image: url(../img/africa.pattern.jpg);
+  background-size: 80%;
+
 }
 
 header {
@@ -25,6 +34,7 @@ header {
   opacity: 0;
   width: 0;
   height: 0;
+
 }
 
 /*Bakgrunden till switch-knappen*/
@@ -54,12 +64,12 @@ header {
 }
 
 /*ändrar färgen när checkboxen är aktiverad*/
-input:checked + .slider {
-  background-color: #3c5aa8;
+input:checked+.slider {
+    background-color: #5E4955;
   /* Grön färg för "på" */
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
   transform: translateX(26px);
   /* Flyttar cirkeln till höger */
 }
@@ -78,15 +88,16 @@ section {
   flex-direction: column;
   margin: 40px;
   padding: 30px;
-  background-color: red;
 }
 
 .cityA {
-  background-color: aqua;
+  background-color: #eee;
+  border-radius: 10%;
 }
 
 .cityB {
-  background-color: bisque;
+  background-color: #eee;
+  border-radius: 10%;
 }
 
 /* Cat facts*/
