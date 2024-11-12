@@ -19,13 +19,13 @@ function fetchWeatherData(selectId, containerId) {
 
             const weatherData = {
                 city: data.name,
+                icon: `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`,
                 description: data.weather[0].description,
                 temperature: `${Math.round(data.main.temp)}°C`,
                 feels_like: `Känns som: ${Math.round(data.main.feels_like)}°C`,
                 humidity: `Luftfuktighet: ${data.main.humidity}%`,
                 pressure: `Lufttryck: ${data.main.pressure} kPa`,
                 wind: `Vind: ${data.wind.speed} m/s`,
-                icon: `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`,
             };
 
             localStorage.setItem(selectId, city);   // Spara stad local storage
@@ -130,21 +130,43 @@ function checkTemperature() {
 
 window.onload = displayWeather;
 
-//Toggle knapp för att byta tema 
+// Toggle knapp för att byta tema 
 const toggleSwitch = document.getElementById("toggleSwitch");
 let body = document.body;
+
+// Hämta alla sektioner
+const sections = document.querySelectorAll("section"); 
 
 // Funktion för att ändra backgrund och spara 
 function themeToggle() {
     const isTropic = toggleSwitch.checked;
     localStorage.setItem("isTropic", isTropic);
     body.classList.toggle("tropic", isTropic);
+    
+    // Lägg till tropic på section
+    sections.forEach(section => {
+        if (isTropic) {
+            section.classList.add("tropic");
+        } else {
+            section.classList.remove("tropic");
+        }
+    });
 }
-//Hämtade sparade temat
+
+// Hämtade sparade temat
 function savedTheme() {
     const isTropic = localStorage.getItem("isTropic") === "true";
     toggleSwitch.checked = isTropic;
     body.classList.toggle("tropic", isTropic);
+    
+    // lägg till tropic på section
+    sections.forEach(section => {
+        if (isTropic) {
+            section.classList.add("tropic");
+        } else {
+            section.classList.remove("tropic");
+        }
+    });
 }
 
 // Event lyssnare för att växla backgrund när man klickar

@@ -1,5 +1,5 @@
 body {
-    background-color: #8EC5E7;
+/* Tagit bort bakgrundsfärgerna så man slipper se dem flimmra förbi */
     background-image: url(img/5096259.jpg);
     background-size: 40%;
     background-repeat: repeat;
@@ -7,11 +7,29 @@ body {
 }
 
 body.tropic {
-    background-color: #8F2F28;
     background-image: url(img/africa.pattern.jpg);
     background-size: 80%;
 
 
+}
+
+section
+{
+  background-color: rgb(76, 92, 185);  
+}
+
+section.tropic
+{
+  background-color: rgb(219, 97, 25);
+  color: #000;
+}
+
+/* Textfärger separat för att inte paja formattering i dropdown */
+section>div{
+  color: white;
+}
+section.tropic>div{
+  color: black;
 }
 
 
@@ -20,6 +38,11 @@ header {
   display: flex;
   justify-content: end;
 }
+
+.description{
+  text-transform: capitalize;
+}
+
 
 /*Toggleknapp*/
 .switch {
@@ -80,25 +103,33 @@ input:checked+.slider:before {
 }
 
 section {
-  height: 100vh;
-  width: 400px;
+  height: 80vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   margin: 40px;
   padding: 30px;
-}
-
-.cityA {
-  background-color: #eee;
   border-radius: 10%;
 }
 
-.cityB {
-  background-color: #eee;
-  border-radius: 10%;
+section>div>div
+{
+  padding-top: 5px;
 }
+
+section>div>img
+{
+  margin: 10px;
+}
+
+.cityName{
+  text-align: center;
+}
+h2{
+  padding-top: 20px;
+}
+
 
 /* Cat facts*/
 #cat-fact-container {
@@ -131,7 +162,6 @@ section {
 
 #dependingOnTempBox img {
   max-width:100%;
-  
 }
 
 #dependingOnTempBox.show {
