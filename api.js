@@ -25,7 +25,7 @@ function fetchWeatherData(selectId, containerId) {
                 humidity: `Luftfuktighet: ${data.main.humidity}%`,
                 pressure: `Lufttryck: ${data.main.pressure} kPa`,
                 wind: `Vind: ${data.wind.speed} m/s`,
-        
+                icon: `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`,
             };
 
             localStorage.setItem(selectId, city);
