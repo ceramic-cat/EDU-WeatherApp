@@ -21,11 +21,11 @@ function fetchWeatherData(selectId, containerId) {
                 city: data.name,
                 description: data.weather[0].description,
                 temperature: `${Math.round(data.main.temp)}°C`,
-                feels_like: `${Math.round(data.main.feels_like)}°C`,
-                humidity: `${data.main.humidity}%`,
-                pressure: `${data.main.pressure} kPa`,
-                wind: `${data.wind.speed} m/s`,
-                icon: `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`,
+                feels_like: `Känns som: ${Math.round(data.main.feels_like)}°C`,
+                humidity: `Luftfuktighet: ${data.main.humidity}%`,
+                pressure: `Lufttryck: ${data.main.pressure} kPa`,
+                wind: `Vind: ${data.wind.speed} m/s`,
+        
             };
 
             localStorage.setItem(selectId, city);
