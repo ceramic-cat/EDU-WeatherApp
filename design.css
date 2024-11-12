@@ -112,3 +112,29 @@ section {
   opacity: 1;
   visibility: visible;
 }
+
+/*Flight*/
+
+#dependingOnTempBox {
+  opacity: 0; /* Startar osynlig */
+  transition: opacity 1s ease, transform 1s ease;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: white;
+  padding: 20px;
+  border: 2px solid #ffcc00;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 200px;
+}
+
+#dependingOnTempBox img {
+  max-width:100%;
+  
+}
+
+#dependingOnTempBox.show {
+  opacity: 1;
+  
+}

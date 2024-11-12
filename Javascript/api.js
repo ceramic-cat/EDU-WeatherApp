@@ -15,8 +15,8 @@ function fetchWeatherData(selectId, containerId) {
 
         .then((data) => {
             // När datan är konverterad till json får vi väderinformationen
-
             console.log(data); // For debugging
+
             const weatherData = {
                 city: data.name,
                 description: data.weather[0].description,
@@ -28,11 +28,15 @@ function fetchWeatherData(selectId, containerId) {
                 icon: `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`,
             };
 
-            localStorage.setItem(selectId, city);
+            localStorage.setItem(selectId, city);   // Spara stad local storage
 
             // Lägg till väderinformationen (se längre ner i koden för funktionen)
             updateWeatherDisplay(containerId, weatherData);
+            if (data.weather[0].id >= 200 && data.weather[0].id < 600) {
+                showRandomFact();
+            }
         })
+
         .catch((error) => {
             console.error("Error fetching weather data: ", error);
             alert("Error fetching data for " + city);
@@ -54,6 +58,38 @@ function updateWeatherDisplay(containerId, weatherData) {
     });
 }
 
+function getRandomFact() {
+    const factApiUrl = "https://uselessfacts.jsph.pl/api/v2/facts/random";
+    return fetch(factApiUrl)
+      .then((data) => data.json())
+      .then((data) => {
+        let fact = data.text;
+        console.log("Fetched random fact:", fact);
+        return fact;
+      })
+      .catch((error) => {
+        console.error("Unable to get a random fact: ", error);
+        return "No random facts available at this time! 😿";
+      });
+  }
+  
+// Show the catfact
+function showRandomFact() {
+    const notification = document.getElementById("cat-fact-container");
+    const paragraph = document.getElementById("cat-fact-paragraph");
+  
+    // Call getCatFact and update paragraph after the fact is fetched
+    getRandomFact().then((catFact) => {
+      paragraph.innerText = catFact;
+      notification.classList.add("show");   // Visa kattfakta
+
+      console.log("Showing random fact:", catFact);
+  
+      // Hide catfact after certain time
+      setTimeout(() => {
+        notification.classList.remove("show");
+      }, 5000);
+    });}
 
 function saveCity() {
     const savedCityA = localStorage.getItem('city-dropdown-a');
@@ -72,3 +108,47 @@ function saveCity() {
 }
 saveCity();
 
+const temperatureCity1 = 15; // Exempel: stad 1 är 15 grader
+const temperatureCity2 = 25; // Exempel: stad 2 är 25 grader
+
+function displayWeather() {
+    // Visar väderinformationen
+    document.getElementById("tempCity1").innerText = `${temperatureCity1}°C`;
+    document.getElementById("tempCity2").innerText = `${temperatureCity2}°C`;
+
+    // Fördröjning för att visa rutan efter 5 sekunder om temperaturen är under 20 grader
+    setTimeout(checkTemperature, 5000);
+}
+
+function checkTemperature() {
+    // Kontrollera om någon stad har en temperatur under 20 grader
+    if (temperatureCity1 < 20 || temperatureCity2 < 20) {
+        const dependingOnTempBox = document.getElementById("dependingOnTempBox");
+        dependingOnTempBox.classList.add("show");
+    }
+}
+
+window.onload = displayWeather;
+
+//Toggle knapp för att byta tema 
+const toggleSwitch = document.getElementById("toggleSwitch");
+let body = document.body;
+
+// Funktion för att ändra backgrund och spara 
+function themeToggle() {
+    const isTropic = toggleSwitch.checked;
+    localStorage.setItem("isTropic", isTropic);
+    body.classList.toggle("tropic", isTropic);
+}
+//Hämtade sparade temat
+function savedTheme() {
+    const isTropic = localStorage.getItem("isTropic") === "true";
+    toggleSwitch.checked = isTropic;
+    body.classList.toggle("tropic", isTropic);
+}
+
+// Event lyssnare för att växla backgrund när man klickar
+toggleSwitch.addEventListener("click", themeToggle);
+
+//Anropa
+savedTheme();
