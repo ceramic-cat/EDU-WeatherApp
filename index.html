@@ -3,29 +3,25 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="design.css">
-    <title>Weather-app</title>
-      <script src= "toggle.js" defer></script>
+      <link rel="stylesheet" href="design.css">
+      <script defer src= "toggle.js"></script>
       <script defer src="flight.js"></script>
+      <script defer src="cat-facts.js"></script>
+      <script defer src="api.js"></script>
+    
+    <title>Weather-app</title>
 
-
-    <script src="cat-facts.js" defer></script>
-
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
+    <!-- Bootstrap-->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">  
+    
   </head>
   <body>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-      crossorigin="anonymous"
-    ></script>
-    <header>
+      <header>
         
       <label class="switch">
             <input type="checkbox" id="toggleSwitch">
@@ -84,7 +80,7 @@
                     <img data-weather="icon" alt="Weather icon"></div>  <!-- Bild/ikon från vädret -->
                 </div>
             </section>
-
+            <!-- "Väderinfo" som här ihop med dependingOnTempBox-->
             <div id="weatherInfo">
                 <p>Temperatur i stad 1: <span id="tempCity1">15°C</span></p>
                 <p>Temperatur i stad 2: <span id="tempCity2">25°C</span></p>
@@ -109,13 +105,9 @@
     </main>
 
     <footer> </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
 
-    <!-- Flytta inte förens vi vet varför det måste laddas sist för att fungera -->
-    <script src="api.js"></script>
+
+    
 </body>
 </html>
