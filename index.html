@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="design.css">
     <title>Weather-app</title>
-    <script src="dropdown.js" defer></script>
-    <script src= "toggle.js" defer></script>
+      <script src= "toggle.js" defer></script>
 
 
     <script src="cat-facts.js" defer></script>
@@ -40,7 +39,7 @@
             <section class="cityA" id="cityA"> <label for="city-dropdown-a"></label>
                 <!-- Dropdown meny för att väljs stad. Val = anropar funktionen fetchWeatherData -->
                 <select class="btn bg-success-subtle dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false" name="chooseCityA" id="city-dropdown-a"
+                    aria-expanded="false" name="chooseCityA" id="city-dropdown-a" 
                     onchange="fetchWeatherData('city-dropdown-a', 'weatherContainerA')">
                     <option value="" disabled selected>Choose a city</option>
                     <option value="boras">Borås</option>
