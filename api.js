@@ -20,8 +20,8 @@ function fetchWeatherData(selectId, containerId) {
             const weatherData = {
                 city: data.name,
                 description: data.weather[0].description,
-                temperature: `${data.main.temp}°C`,
-                feels_like: `${data.main.feels_like}°C`,
+                temperature: `${Math.round(data.main.temp)}°C`,
+                feels_like: `${Math.round(data.main.feels_like)}°C`,
                 humidity: `${data.main.humidity}%`,
                 pressure: `${data.main.pressure} kPa`,
                 wind: `${data.wind.speed} m/s`,
