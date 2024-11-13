@@ -176,7 +176,7 @@ Array.from(dropdownB.options).forEach(option => {
 });
 }
 
-document.getElementById("dropdownA").addEventListener("change", updateOptions);
-document.getElementById("dropdownB").addEventListener("change", updateOptions);
+document.getElementById("city-dropdown-a").addEventListener("change", updateOptions);
+document.getElementById("city-dropdown-b").addEventListener("change", updateOptions);
 
 updateOptions();
