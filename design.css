@@ -3,6 +3,7 @@ body {
   background-size: 40%;
   background-repeat: repeat;
 
+
 }
 
 body.tropic {
@@ -15,10 +16,11 @@ body.tropic {
 
 section {
   background-color: rgb(76, 92, 185);
+  background-image: linear-gradient(#374D95, #BCC8E5);
 }
 
 section.tropic {
-  background-color: rgb(69, 189, 179);
+  background-image: linear-gradient(#3c9095, #eee);
   color: #000;
 }
 
@@ -109,7 +111,8 @@ section {
   flex-direction: column;
   margin: 40px;
   padding: 30px;
-  border-radius: 10%;
+  border-radius: 2%;
+  box-shadow: 0 10px 8px rgba(0, 0, 0, 0.2);
 }
 
 section>div>div {
@@ -178,8 +181,6 @@ h2 {
 }
 
 
-
-
 #flightBox.show {
   opacity: 1;
 
@@ -210,5 +211,9 @@ footer img {
 
   .container {
     flex-direction: column;
+  }
+
+  footer {
+    margin-left: 125px;
   }
 }
