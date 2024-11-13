@@ -13,22 +13,21 @@ body.tropic {
 
 }
 
-section
-{
-  background-color: rgb(76, 92, 185);  
+section {
+  background-color: rgb(76, 92, 185);
 }
 
-section.tropic
-{
+section.tropic {
   background-color: rgb(69, 189, 179);
   color: #000;
 }
 
 /* Textfärger separat för att inte paja formattering i dropdown */
-section>div{
+section>div {
   color: white;
 }
-section.tropic>div{
+
+section.tropic>div {
   color: black;
 }
 
@@ -39,7 +38,7 @@ header {
   justify-content: end;
 }
 
-.description{
+.description {
   text-transform: capitalize;
 }
 
@@ -113,20 +112,19 @@ section {
   border-radius: 10%;
 }
 
-section>div>div
-{
+section>div>div {
   padding-top: 5px;
 }
 
-section>div>img
-{
+section>div>img {
   margin: 10px;
 }
 
-.cityName{
+.cityName {
   text-align: center;
 }
-h2{
+
+h2 {
   padding-top: 20px;
 }
 
@@ -154,7 +152,8 @@ h2{
   background-image: url(https://img.ving.se/image/upload/c_fill,g_xy_center,x_640,y_520,w_1280,f_avif,q_auto:eco/images/Resort/nboznr2008_2_34.jpg?v=7);
   background-size: cover;
   background-position: center;
-  opacity: 0; /* Startar osynlig */
+  opacity: 0;
+  /* Startar osynlig */
   transition: opacity 1s ease, transform 1s ease;
   position: fixed;
   bottom: 20px;
@@ -177,7 +176,7 @@ h2{
   text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
   font-size: x-large;
 }
-  
+
 
 
 
@@ -188,22 +187,28 @@ h2{
 
 }
 
-footer  {
+footer {
   position: sticky;
   margin-left: 20px;
   padding: 0px 5px 0px 5px;
   text-align: center;
   background-color: whitesmoke;
   width: 180px;
-  border-radius: 10px;  
+  border-radius: 10px;
   border: solid black;
 }
 
 footer img {
-height: 100px;
-padding-top: 16px;
+  height: 100px;
+  padding-top: 16px;
 
 
 
 }
 
+@media screen and (max-width: 500px) {
+
+  .container {
+    flex-direction: column;
+  }
+}
