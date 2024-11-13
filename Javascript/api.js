@@ -173,3 +173,32 @@ toggleSwitch.addEventListener("click", themeToggle);
 
 //Anropa
 savedTheme();
+
+function updateOptions() {
+    const dropdownA = document.getElementById("city-dropdown-a");
+    const dropdownB = document.getElementById("city-dropdown-b");
+
+    const selectedValueA = dropdownA.value;
+    const selectedValueB = dropdownB.value;
+    
+ Array.from(dropdownA.options).forEach(option => {
+    if (option.value === selectedValueB && selectedValueB !== "") {
+        option.disabled = true;
+    } else {
+        option.disabled = false;
+    }
+});
+
+Array.from(dropdownB.options).forEach(option => {
+    if (option.value === selectedValueA && selectedValueA !== "") {
+        option.disabled = true;
+    } else {
+        option.disabled = false;
+    }
+});
+}
+
+document.getElementById("city-dropdown-a").addEventListener("change", updateOptions);
+document.getElementById("city-dropdown-b").addEventListener("change", updateOptions);
+
+updateOptions();
