@@ -32,7 +32,7 @@
             <!-- dropdown/meny A-->
             <section class="cityA" id="cityA"> <label for="city-dropdown-a"></label>
                 <!-- Dropdown meny för att väljs stad. Val = anropar funktionen fetchWeatherData -->
-                <select class="btn bg-success-subtle dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                <select class="btn bg-success-subtle dropdown-toggle"  data-bs-toggle="dropdown"
                     aria-expanded="false" name="chooseCityA" id="city-dropdown-a" 
                     onchange="fetchWeatherData('city-dropdown-a', 'weatherContainerA')">
                     <option value="" disabled selected>Choose a city</option>
@@ -44,8 +44,8 @@
                 
                 <!--Visar väderinfo (fylls med data från js) -->
                 <div id="weatherContainerA" class="weather-container">
-                  <h2 data-weather="city"></h2> <!-- Stad -->
-                    <img id="weather-icon" data-weather="icon" alt="Weather icon" />  <!-- Bild/ikon från vädret -->
+                  <h2 data-weather="city">Stad</h2> <!-- Stad -->
+                    <img src="#" data-weather="icon" alt="Weather icon" >  <!-- Bild/ikon från vädret -->
                     <div data-weather="description"></div> <!-- Beskrivning av väder -->
                     <div data-weather="temperature"></div> <!-- Temp -->
                     <div data-weather="feels_like"></div> <!-- Känns som -->
@@ -56,7 +56,7 @@
 
             </section> <!-- dropdown/meny B -->
             <section class="cityB"> <label for="city-dropdown-b"> </label> <select
-                    class="btn bg-success-subtle dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    class="btn bg-success-subtle dropdown-toggle" data-bs-toggle="dropdown"
                     aria-expanded="false" name="chooseCityB" id="city-dropdown-b"
                     onchange="fetchWeatherData('city-dropdown-b', 'weatherContainerB')">
                     <option value="" disabled selected>Choose a city </option>
@@ -68,8 +68,8 @@
 
                 <!--Visar väderinfo (fylls med data från js) -->
                 <div id="weatherContainerB" class="weather-container">
-                  <h2><div data-weather="city"></div></h2>  <!-- Stad -->
-                  <img id="weather-icon" data-weather="icon" alt="Weather icon" />  <!-- Bild/ikon från vädret -->
+                  <h2 data-weather="city">Stad</h2>  <!-- Stad -->
+                  <img src="#" data-weather="icon" alt="Weather icon" >  <!-- Bild/ikon från vädret -->
                   <div data-weather="description"></div> <!-- Beskrivning av väder -->
                   <div data-weather="temperature"></div> <!-- Temp -->
                   <div data-weather="feels_like"></div> <!-- Känns som -->
