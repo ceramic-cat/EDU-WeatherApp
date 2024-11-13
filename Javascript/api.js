@@ -22,10 +22,10 @@ function fetchWeatherData(selectId, containerId) {
                 icon: `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`,
                 description: data.weather[0].description,
                 temperature: `${Math.round(data.main.temp)}°C`,
-                feels_like: `Känns som: ${Math.round(data.main.feels_like)}°C`,
-                humidity: `Luftfuktighet: ${data.main.humidity}%`,
-                pressure: `Lufttryck: ${data.main.pressure} kPa`,
-                wind: `Vind: ${data.wind.speed} m/s`,
+                feels_like: `Feels like: ${Math.round(data.main.feels_like)}°C`,
+                humidity: `Humidity: ${data.main.humidity}%`,
+                pressure: `Air pressure: ${data.main.pressure} kPa`,
+                wind: `Wind speed: ${data.wind.speed} m/s`,
             };
 
             localStorage.setItem(selectId, city);   // Spara stad local storage
