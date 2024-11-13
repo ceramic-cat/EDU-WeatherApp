@@ -101,6 +101,7 @@ input:checked+.slider:before {
 .container {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 section {
@@ -193,15 +194,18 @@ footer {
   margin-left: 20px;
   padding: 0px 5px 0px 5px;
   text-align: center;
-  background-color: whitesmoke;
+  font-weight: bolder;
+
   width: 180px;
   border-radius: 10px;
-  border: solid black;
+
+
 }
 
 footer img {
   height: 100px;
   padding-top: 16px;
+
 
 
 
