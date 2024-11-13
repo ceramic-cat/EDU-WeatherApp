@@ -36,11 +36,8 @@ function fetchWeatherData(selectId, containerId) {
                 showRandomFact();
             }
             else if (data.main.temp <15) {
-                setTimeout(displayFlightBox, 5000); //Om vi har paranteser efter box så görs funktionen diretk
-                
+                setTimeout(displayFlightBox, 5000); //Om vi har paranteser efter box så görs funktionen diretk  
             }
-
-            
         })
 
         .catch((error) => {
@@ -52,17 +49,23 @@ function fetchWeatherData(selectId, containerId) {
 function updateWeatherDisplay(containerId, weatherData) {
     const container = document.getElementById(containerId);
 
+    const cityElement = container.querySelector('[data-weather="city"]');
+    if (cityElement) {
+        cityElement.textContent = weatherData.city;
+    }
+
+    const iconElement = container.querySelector('[data-weather="icon"]');
+ if (iconElement) {
+        iconElement.src = weatherData.icon;
+    }
+
     Object.keys(weatherData).forEach((key) => {
         const element = container.querySelector(`[data-weather="${key}"]`);
-        if (key === "icon" && element) {
-            // Är det en bild som ska visas sätts src-attributet till urln för bilden
-            element.src = weatherData[key];
-        } else if (element) {
-            // Elemnen som inte är bilder får texten satt till värdet (te.x temperatur)
+        if (element) {
             element.textContent = weatherData[key];
         }
-    });
-}
+       });
+    }
 
 function getRandomFact() {
     const factApiUrl = "https://uselessfacts.jsph.pl/api/v2/facts/random";
@@ -125,7 +128,6 @@ function displayFlightBox () {
           }, 7000); //Bilden försvinner efter en stund
 
 }
-
 
 //Toggle knapp för att byta tema 
 const toggleSwitch = document.getElementById("toggleSwitch");

@@ -44,14 +44,15 @@
                 
                 <!--Visar väderinfo (fylls med data från js) -->
                 <div id="weatherContainerA" class="weather-container">
-                    <h2 data-weather="city"></h2>   <!-- Stad -->
+                  <h2 data-weather="city"></h2> <!-- Stad -->
+                    <img id="weather-icon" data-weather="icon" alt="Weather icon" />  <!-- Bild/ikon från vädret -->
                     <div data-weather="description"></div> <!-- Beskrivning av väder -->
                     <div data-weather="temperature"></div> <!-- Temp -->
                     <div data-weather="feels_like"></div> <!-- Känns som -->
                     <div data-weather="humidity"></div> <!-- Luftfuktighet -->
                     <div data-weather="pressure"></div> <!-- Lufttryck -->
                     <div data-weather="wind"></div> <!-- Vind och typ väster/öster -->
-                    <img data-weather="icon" alt="Weather icon"></div>  <!-- Bild/ikon från vädret -->
+                    </div> 
 
             </section> <!-- dropdown/meny B -->
             <section class="cityB"> <label for="city-dropdown-b"> </label> <select
@@ -67,19 +68,17 @@
 
                 <!--Visar väderinfo (fylls med data från js) -->
                 <div id="weatherContainerB" class="weather-container">
-                    <h2 data-weather="city"></h2>   <!-- Stad -->
-                    <div data-weather="description"></div> <!-- Beskrivning av väder -->
-                    <div data-weather="temperature"></div> <!-- Temp -->
-                    <div data-weather="feels_like"></div> <!-- Känns som -->
-                    <div data-weather="humidity"></div> <!-- Luftfuktighet -->
-                    <div data-weather="pressure"></div> <!-- Lufttryck -->
-                    <div data-weather="wind"></div> <!-- Vind och typ väster/öster -->
-                    <img data-weather="icon" alt="Weather icon"></div>  <!-- Bild/ikon från vädret -->
+                  <h2><div data-weather="city"></div></h2>  <!-- Stad -->
+                  <img id="weather-icon" data-weather="icon" alt="Weather icon" />  <!-- Bild/ikon från vädret -->
+                  <div data-weather="description"></div> <!-- Beskrivning av väder -->
+                  <div data-weather="temperature"></div> <!-- Temp -->
+                  <div data-weather="feels_like"></div> <!-- Känns som -->
+                  <div data-weather="humidity"></div> <!-- Luftfuktighet -->
+                  <div data-weather="pressure"></div> <!-- Lufttryck -->
+                  <div data-weather="wind"></div> <!-- Vind och typ väster/öster -->
                 </div>
             </section>
-          
-            
-            
+        
               <a href="https://www.ving.se/tanzania/" target="_blank">
               <div id="flightBox">
               <p>Burr så kallt det är! Åk till lite varmare breddgrader istället!</p>          
@@ -91,8 +90,7 @@
   
       <div
         id="cat-fact-container"
-        class="alert alert-primary position-fixed end-0 top-0 shadow-lg col-md-2 col-md-offset"
-      >
+        class="alert alert-primary position-fixed end-0 top-0 shadow-lg col-md-2 col-md-offset">
         <p>It's raining cats and dogs! 🐈</p>
         <p>Here's a fun fact 🌧</p>
         <p id="cat-fact-paragraph">test</p>
@@ -100,9 +98,5 @@
     </main>
 
     <footer> </footer>
-    
-
-
-    
 </body>
 </html>
