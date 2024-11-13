@@ -191,10 +191,10 @@ h2{
 footer  {
   position: sticky;
   margin-left: 20px;
-
+  padding: 0px 5px 0px 5px;
   text-align: center;
   background-color: whitesmoke;
-  width: 220px;
+  width: 180px;
   border-radius: 10px;  
   border: solid black;
 }
