@@ -1,14 +1,14 @@
 body {
-/* Tagit bort bakgrundsfärgerna så man slipper se dem flimmra förbi */
-    background-image: url(img/5096259.jpg);
-    background-size: 40%;
-    background-repeat: repeat;
+  background-image: url(img/cold.pattern.jpg);
+  background-size: 40%;
+  background-repeat: repeat;
 
 }
 
 body.tropic {
-    background-image: url(img/africa.pattern.jpg);
-    background-size: 80%;
+
+  background-image: url(img/africa.pattern.jpg);
+  background-size: 80%;
 
 
 }
@@ -44,7 +44,12 @@ header {
 }
 
 
-/*Toggleknapp*/
+.description{
+  text-transform: capitalize;
+}
+
+
+/*Togglebutton*/
 .switch {
   position: relative;
   display: inline-block;
@@ -52,7 +57,7 @@ header {
   height: 34px;
 }
 
-/*Ta bort checkbox rutan*/
+/*Make the checkbox invisible */
 .switch input {
   opacity: 0;
   width: 0;
@@ -60,7 +65,7 @@ header {
 
 }
 
-/*Bakgrunden till switch-knappen*/
+/*Background to the switch-button*/
 .slider {
   position: absolute;
   cursor: pointer;
@@ -73,7 +78,7 @@ header {
   border-radius: 34px;
 }
 
-/* Cirkeln som rör sig till höger/vänster när man klickar på knappen*/
+/* The circle that moves to right/left when you click on the button*/
 .slider:before {
   position: absolute;
   content: "";
@@ -86,15 +91,15 @@ header {
   border-radius: 50%;
 }
 
-/*ändrar färgen när checkboxen är aktiverad*/
+/*change color when the switch is activated*/
 input:checked+.slider {
-    background-color: #5E4955;
-  /* Grön färg för "på" */
+  background-color: #5E4955;
+
 }
 
 input:checked+.slider:before {
   transform: translateX(26px);
-  /* Flyttar cirkeln till höger */
+  /* Moves circle to right*/
 }
 
 .container {
@@ -133,20 +138,27 @@ h2{
 
 /* Cat facts*/
 #cat-fact-container {
-  transform: translateY(-100%); /* Start off-screen */
+  transform: translateY(-100%);
+  /* Start off-screen */
   opacity: 0;
   visibility: hidden;
   transition: transform 0.5s ease, opacity 0.5s ease, visibility 0.5s;
 }
+
 #cat-fact-container.show {
-  transform: translateY(0); /* Slide into view */
+  transform: translateY(0);
+  /* Slide into view */
   opacity: 1;
   visibility: visible;
 }
 
 /*Flight*/
 
-#dependingOnTempBox {
+
+#flightBox {
+  background-image: url(https://img.ving.se/image/upload/c_fill,g_xy_center,x_640,y_520,w_1280,f_avif,q_auto:eco/images/Resort/nboznr2008_2_34.jpg?v=7);
+  background-size: cover;
+  background-position: center;
   opacity: 0; /* Startar osynlig */
   transition: opacity 1s ease, transform 1s ease;
   position: fixed;
@@ -154,17 +166,26 @@ h2{
   right: 20px;
   background-color: white;
   padding: 20px;
-  border: 2px solid #ffcc00;
+  border: 2px solid orange;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
-  max-width: 200px;
+  width: 300px;
+  height: 200px;
+  pointer-events: none;
+  border-radius: 10px;
 }
 
-#dependingOnTempBox img {
-  max-width:100%;
-}
 
-#dependingOnTempBox.show {
+#flightBox p {
+  text-decoration: none;
+  color: black;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8)}
+
+
+
+#flightBox.show {
   opacity: 1;
-  
+
+  pointer-events: auto;
+
 }

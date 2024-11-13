@@ -33,7 +33,7 @@
             <section class="cityA col-md-3" id="cityA"> 
               <label for="city-dropdown-a"></label>
                 <!-- Dropdown meny för att väljs stad. Val = anropar funktionen fetchWeatherData -->
-                <select class="btn bg-primary-subtle dropdown-toggle " type="button" data-bs-toggle="dropdown"
+                <select class="btn bg-success-subtle dropdown-toggle"  data-bs-toggle="dropdown"
                     aria-expanded="false" name="chooseCityA" id="city-dropdown-a" 
                     onchange="fetchWeatherData('city-dropdown-a', 'weatherContainerA')">
                     <option class="dropdown-value disabled" value="" disabled selected>Choose a city</option>
@@ -45,19 +45,20 @@
                 
                 <!--Visar väderinfo (fylls med data från js) -->
                 <div id="weatherContainerA" class="weather-container">
-                    <h2 data-weather="city" class="cityName"></h2>   <!-- Stad -->
+                  <h2 data-weather="city" class="cityName">Stad</h2> <!-- Stad -->
+                    <img src="#" data-weather="icon" alt="Weather icon" >  <!-- Bild/ikon från vädret -->
                     <div data-weather="description" class="description"></div> <!-- Beskrivning av väder -->
                     <div data-weather="temperature" class="fs-2"></div> <!-- Temp -->
                     <div data-weather="feels_like"></div> <!-- Känns som -->
                     <div data-weather="humidity"></div> <!-- Luftfuktighet -->
                     <div data-weather="pressure"></div> <!-- Lufttryck -->
                     <div data-weather="wind"></div> <!-- Vind och typ väster/öster -->
-                    <img data-weather="icon" alt="Weather icon"></div>  <!-- Bild/ikon från vädret -->
+                    </div> 
 
             </section> <!-- dropdown/meny B -->
             <section class="cityB col-md-3"> 
               <label for="city-dropdown-b"> </label> <select
-                    class="btn bg-primary-subtle dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    class="btn bg-success-subtle dropdown-toggle" data-bs-toggle="dropdown"
                     aria-expanded="false" name="chooseCityB" id="city-dropdown-b"
                     onchange="fetchWeatherData('city-dropdown-b', 'weatherContainerB')">
                     <option class="dropdown-value disabled" value="" disabled selected>Choose a city</option>
@@ -69,34 +70,29 @@
 
                 <!--Visar väderinfo (fylls med data från js) -->
                 <div id="weatherContainerB" class="weather-container">
-                    <h2 data-weather="city" class="cityName"></h2>   <!-- Stad -->
-                    <div data-weather="description" class="description"></div> <!-- Beskrivning av väder -->
-                    <div data-weather="temperature" class="fs-2"></div> <!-- Temp -->
-                    <div data-weather="feels_like"></div> <!-- Känns som -->
-                    <div data-weather="humidity"></div> <!-- Luftfuktighet -->
-                    <div data-weather="pressure"></div> <!-- Lufttryck -->
-                    <div data-weather="wind"></div> <!-- Vind och typ väster/öster -->
-                    <img data-weather="icon" alt="Weather icon" display="block"></div>  <!-- Bild/ikon från vädret -->
+                  <h2 data-weather="city">Stad</h2>  <!-- Stad -->
+                  <img src="#" data-weather="icon" alt="Weather icon" >  <!-- Bild/ikon från vädret -->
+                  <div data-weather="description" class="description"></div> <!-- Beskrivning av väder -->
+                  <div data-weather="temperature" class="fs-2"></div> <!-- Temp -->
+                  <div data-weather="feels_like"></div> <!-- Känns som -->
+                  <div data-weather="humidity"></div> <!-- Luftfuktighet -->
+                  <div data-weather="pressure"></div> <!-- Lufttryck -->
+                  <div data-weather="wind"></div> <!-- Vind och typ väster/öster -->
                 </div>
             </section>
-            <!-- "Väderinfo" som här ihop med dependingOnTempBox-->
-            <div id="weatherInfo">
-                <p>Temperatur i stad 1: <span id="tempCity1">15°C</span></p>
-                <p>Temperatur i stad 2: <span id="tempCity2">25°C</span></p>
-            </div>
-            <div id="dependingOnTempBox">
-              <p>Det är kallt här! Boka en resa till solen!</p>
-              <a href="https://www.ving.se/tanzania/zanzibar" target="_blank">
-                  <img src="https://img.ving.se/image/upload/c_fill,g_xy_center,x_640,y_520,w_1280,f_avif,q_auto:eco/images/Resort/nboznr2008_2_34.jpg?v=7">
+        
+              <a href="https://www.ving.se/tanzania/" target="_blank">
+              <div id="flightBox">
+              <p>Burr så kallt det är! Åk till lite varmare breddgrader istället!</p>          
+               </div>
               </a>
-          </div>
+          
         
         </div>
   
       <div
         id="cat-fact-container"
-        class="alert alert-primary position-fixed end-0 top-0 shadow-lg col-md-2 col-md-offset"
-      >
+        class="alert alert-primary position-fixed end-0 top-0 shadow-lg col-md-2 col-md-offset">
         <p>It's raining cats and dogs! 🐈</p>
         <p>Here's a fun fact 🌧</p>
         <p id="cat-fact-paragraph">test</p>
@@ -104,9 +100,5 @@
     </main>
 
     <footer> </footer>
-    
-
-
-    
 </body>
 </html>
