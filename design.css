@@ -174,7 +174,10 @@ h2{
 #flightBox p {
   text-decoration: none;
   color: black;
-  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8)}
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+  font-size: x-large;
+}
+  
 
 
 
