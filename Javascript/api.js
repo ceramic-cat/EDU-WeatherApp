@@ -35,6 +35,9 @@ function fetchWeatherData(selectId, containerId) {
             if (data.weather[0].id >= 200 && data.weather[0].id < 600) {
                 showRandomFact();
             }
+            else if (data.main.temp <15) {
+                setTimeout(displayFlightBox, 5000); //Om vi har paranteser efter box så görs funktionen diretk  
+            }
         })
 
         .catch((error) => {
@@ -46,17 +49,23 @@ function fetchWeatherData(selectId, containerId) {
 function updateWeatherDisplay(containerId, weatherData) {
     const container = document.getElementById(containerId);
 
+    const cityElement = container.querySelector('[data-weather="city"]');
+    if (cityElement) {
+        cityElement.textContent = weatherData.city;
+    }
+
+    const iconElement = container.querySelector('[data-weather="icon"]');
+ if (iconElement) {
+        iconElement.src = weatherData.icon;
+    }
+
     Object.keys(weatherData).forEach((key) => {
         const element = container.querySelector(`[data-weather="${key}"]`);
-        if (key === "icon" && element) {
-            // Är det en bild som ska visas sätts src-attributet till urln för bilden
-            element.src = weatherData[key];
-        } else if (element) {
-            // Elemnen som inte är bilder får texten satt till värdet (te.x temperatur)
+        if (element) {
             element.textContent = weatherData[key];
         }
-    });
-}
+       });
+    }
 
 function getRandomFact() {
     const factApiUrl = "https://uselessfacts.jsph.pl/api/v2/facts/random";
@@ -108,27 +117,17 @@ function saveCity() {
 }
 saveCity();
 
-const temperatureCity1 = 15; // Exempel: stad 1 är 15 grader
-const temperatureCity2 = 25; // Exempel: stad 2 är 25 grader
 
-function displayWeather() {
-    // Visar väderinformationen
-    document.getElementById("tempCity1").innerText = `${temperatureCity1}°C`;
-    document.getElementById("tempCity2").innerText = `${temperatureCity2}°C`;
+//Show Flightbox function
 
-    // Fördröjning för att visa rutan efter 5 sekunder om temperaturen är under 20 grader
-    setTimeout(checkTemperature, 5000);
+function displayFlightBox () {
+     const flightBox = document.getElementById("flightBox");
+        flightBox.classList.add("show");
+        setTimeout(() => {
+            flightBox.classList.remove("show");
+          }, 7000); //Bilden försvinner efter en stund
+
 }
-
-function checkTemperature() {
-    // Kontrollera om någon stad har en temperatur under 20 grader
-    if (temperatureCity1 < 20 || temperatureCity2 < 20) {
-        const dependingOnTempBox = document.getElementById("dependingOnTempBox");
-        dependingOnTempBox.classList.add("show");
-    }
-}
-
-window.onload = displayWeather;
 
 //Toggle knapp för att byta tema 
 const toggleSwitch = document.getElementById("toggleSwitch");
