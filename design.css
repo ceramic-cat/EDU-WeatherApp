@@ -189,21 +189,21 @@ h2{
 }
 
 footer  {
- 
-  width: 100%;
   position: sticky;
-  padding-left: 50px;
-  justify-self: flex-start;
+  margin-left: 20px;
 
+  text-align: center;
+  background-color: whitesmoke;
+  width: 220px;
+  border-radius: 10px;  
+  border: solid black;
 }
 
 footer img {
 height: 100px;
+padding-top: 16px;
+
 
 
 }
 
-footer p {
-  background-color: white;
-  width: 220px;
-}
