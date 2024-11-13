@@ -103,7 +103,7 @@ input:checked+.slider:before {
 }
 
 section {
-  height: 80vh;
+  height: 70vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -186,4 +186,24 @@ h2{
 
   pointer-events: auto;
 
+}
+
+footer  {
+ 
+  width: 100%;
+  position: sticky;
+  padding-left: 50px;
+  justify-self: flex-start;
+
+}
+
+footer img {
+height: 100px;
+
+
+}
+
+footer p {
+  background-color: white;
+  width: 220px;
 }
