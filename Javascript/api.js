@@ -94,10 +94,10 @@ function showRandomFact() {
 
       console.log("Showing random fact:", catFact);
   
-      // Hide catfact after certain time
+      // Hide catfact after 10 seconds
       setTimeout(() => {
         notification.classList.remove("show");
-      }, 5000);
+      }, 10000);
     });}
 
 function saveCity() {
