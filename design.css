@@ -15,7 +15,6 @@ body.tropic {
 }
 
 section {
-  background-color: rgb(76, 92, 185);
   background-image: linear-gradient(#374D95, #BCC8E5);
 }
 
@@ -35,14 +34,17 @@ section.tropic>div {
 
 #copyright,
 #main-header{
-  background-color: rgb(76, 92, 185);
+  background-image: linear-gradient(#374D95, #BCC8E5);
   color: #fff;
+  font-weight: bold;
 }
 
 #copyright.tropic,
 #main-header.tropic{
-background-color: #3c9095;
+background-image: linear-gradient(#3c9095, #eee);
 color: #000;
+font-weight: bold;
+
 }
 
 header {
