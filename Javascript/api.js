@@ -210,7 +210,10 @@ function updateOptions() {
     if (option.value === selectedValueB && selectedValueB !== "") {
         option.disabled = true;
     } else {
-        option.disabled = false;
+        // Will only remove the disabled option if it's not the empty "Choose a city" option
+        if (option.value != "")
+        {option.disabled = false;}
+        
     }
 });
 
@@ -218,7 +221,9 @@ Array.from(dropdownB.options).forEach(option => {
     if (option.value === selectedValueA && selectedValueA !== "") {
         option.disabled = true;
     } else {
-        option.disabled = false;
+        // Will only remove the disabled option if it's not the empty "Choose a city" option
+        if (option.value != "")
+            {option.disabled = false;}
     }
 });
 }
