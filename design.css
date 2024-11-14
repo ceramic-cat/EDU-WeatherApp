@@ -61,6 +61,8 @@ header {
   display: inline-block;
   width: 60px;
   height: 34px;
+  margin: 10px;
+  margin-bottom: 30px;
 }
 
 /*Make the checkbox invisible */
@@ -216,8 +218,6 @@ footer {
   .container {
     flex-direction: column;
   }
+ 
 
-  footer {
-    margin-left: 125px;
-  }
 }
