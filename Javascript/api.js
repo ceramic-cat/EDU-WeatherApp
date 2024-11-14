@@ -133,8 +133,11 @@ function displayFlightBox () {
 const toggleSwitch = document.getElementById("toggleSwitch");
 let body = document.body;
 
-// Hämta alla sektioner
+// Hämta alla sektioner för att byta tema
 const sections = document.querySelectorAll("section"); 
+
+const mainHeader = document.getElementById("main-header")
+const copyright= document.getElementById("copyright")
 
 // Funktion för att ändra backgrund och spara 
 function themeToggle() {
@@ -150,6 +153,17 @@ function themeToggle() {
             section.classList.remove("tropic");
         }
     });
+
+    // Lägg till tropic på rubrik och copyright-fält
+    if (isTropic){
+        mainHeader.classList.add("tropic");
+        copyright.classList.add("tropic");
+
+    } else {
+        mainHeader.classList.remove("tropic");
+        copyright.classList.remove("tropic");
+
+    }
 }
 
 // Hämtade sparade temat
@@ -166,6 +180,17 @@ function savedTheme() {
             section.classList.remove("tropic");
         }
     });
+    
+    // Lägg till tropic på rubrik och copyright-fält
+    if (isTropic){
+        mainHeader.classList.add("tropic");
+        copyright.classList.add("tropic");
+
+    } else {
+        mainHeader.classList.remove("tropic");
+        copyright.classList.remove("tropic");
+
+    }
 }
 
 // Event lyssnare för att växla backgrund när man klickar

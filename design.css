@@ -33,7 +33,17 @@ section.tropic>div {
   color: black;
 }
 
+#copyright,
+#main-header{
+  background-color: rgb(76, 92, 185);
+  color: #fff;
+}
 
+#copyright.tropic,
+#main-header.tropic{
+background-color: #3c9095;
+color: #000;
+}
 
 header {
   display: flex;
@@ -190,26 +200,16 @@ h2 {
 }
 
 footer {
-  position: sticky;
-  margin-left: 20px;
+  
+  bottom: 1px;
   padding: 0px 5px 0px 5px;
   text-align: center;
-  font-weight: bolder;
-
-  width: 180px;
+  width: 100%;
   border-radius: 10px;
 
 
 }
 
-footer img {
-  height: 100px;
-  padding-top: 16px;
-
-
-
-
-}
 
 @media screen and (max-width: 500px) {
 
